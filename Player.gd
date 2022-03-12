@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 const UP = Vector2(0,-1);
-const FLAP = 200
-const MAXFALLSPEED = 200
+const FLAP = 100
+const MAXFALLSPEED = 300
 const GARVITY = 10
 var score = 0
 
