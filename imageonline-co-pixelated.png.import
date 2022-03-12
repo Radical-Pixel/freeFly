@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/whiteImage.PNG-1adeb9fe7a06fc61cb64bc6528cb54b4.stex"
+path="res://.import/imageonline-co-pixelated.png-68daf6c22273599edc348d2d1cddc60e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://whiteImage.PNG"
-dest_files=[ "res://.import/whiteImage.PNG-1adeb9fe7a06fc61cb64bc6528cb54b4.stex" ]
+source_file="res://imageonline-co-pixelated.png"
+dest_files=[ "res://.import/imageonline-co-pixelated.png-68daf6c22273599edc348d2d1cddc60e.stex" ]
 
 [params]
 
