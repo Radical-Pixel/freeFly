@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Bugmintide.wav" type="AudioStream" id=1]
+[ext_resource path="res://WallNode.tscn" type="PackedScene" id=2]
+[ext_resource path="res://PlayerNode.tscn" type="PackedScene" id=3]
+
+[node name="GamePlayScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+
+[node name="WallNode" parent="." groups=["WallGroup"] instance=ExtResource( 2 )]
+position = Vector2( 547, 290 )
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 134, 279 )
+stream = ExtResource( 1 )
+volume_db = -80.0
+pitch_scale = 1.03
+autoplay = true
