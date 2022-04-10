@@ -1,69 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Bugmintide.wav" type="AudioStream" id=1]
 [ext_resource path="res://WallNode.tscn" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://Player.gd" type="Script" id=4]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 25, 25 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 25.5, 25.5 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 10, 212.5 )
+[ext_resource path="res://PlayerNode.tscn" type="PackedScene" id=3]
 
 [node name="GamePlayScene" type="Node2D"]
 
-[node name="PlayerNode" type="Node2D" parent="."]
-position = Vector2( 134, 279 )
-
-[node name="Player" type="KinematicBody2D" parent="PlayerNode"]
-script = ExtResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="PlayerNode/Player"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerNode/Player"]
-shape = SubResource( 1 )
-
-[node name="Detect" type="Area2D" parent="PlayerNode/Player"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerNode/Player/Detect"]
-shape = SubResource( 2 )
-
-[node name="Resetter" type="Area2D" parent="PlayerNode/Player"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerNode/Player/Resetter"]
-position = Vector2( -179, 3 )
-shape = SubResource( 3 )
-
-[node name="Camera2D" type="Camera2D" parent="PlayerNode/Player"]
-position = Vector2( 252, 23 )
+[node name="Player" parent="." instance=ExtResource( 3 )]
 
 [node name="WallNode" parent="." groups=["WallGroup"] instance=ExtResource( 2 )]
 position = Vector2( 547, 290 )
 
-[node name="WallNode2" parent="." groups=["WallGroup"] instance=ExtResource( 2 )]
-position = Vector2( 693, 294 )
-
-[node name="WallNode3" parent="." groups=["WallGroup"] instance=ExtResource( 2 )]
-position = Vector2( 835, 214 )
-
-[node name="WallNode4" parent="." groups=["WallGroup"] instance=ExtResource( 2 )]
-position = Vector2( 965, 275 )
-
-[node name="WallNode5" parent="." groups=["WallGroup"] instance=ExtResource( 2 )]
-position = Vector2( 1088, 270 )
-
 [node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 134, 279 )
 stream = ExtResource( 1 )
+volume_db = -80.0
 pitch_scale = 1.03
 autoplay = true
-
-[connection signal="area_entered" from="PlayerNode/Player/Detect" to="PlayerNode/Player" method="_on_Detect_area_entered"]
-[connection signal="body_entered" from="PlayerNode/Player/Detect" to="PlayerNode/Player" method="_on_Detect_body_entered"]
-[connection signal="body_entered" from="PlayerNode/Player/Resetter" to="PlayerNode/Player" method="_on_Resetter_body_entered"]

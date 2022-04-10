@@ -8,7 +8,6 @@ func changeScene (new_scene,anim):
 	scene = new_scene
 	Animation.play(anim)
 
-
 func _new_scene():
 	get_tree().change_scene(scene)
 
