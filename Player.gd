@@ -18,9 +18,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("FLAP"):
 		motion.y = -FLAP
 	
-	motion = move_and_slide(motion,UP)
-	
-	get_parent().get_parent().get_node("CanvasLayer/RichTextLabel").text=str(score);
+	motion = move_and_slide(motion,UP);
+##	get_parent().get_parent().get_node("CanvasLayer/RichTextLabel").text=str(score);
 
 
 func wall_reset():

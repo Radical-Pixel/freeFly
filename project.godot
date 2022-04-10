@@ -14,6 +14,19 @@ config/name="FlappyBirdClone"
 run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=771
+window/handheld/orientation="reverse_landscape"
+mouse_cursor/size/resizable=true
+mouse_cursor/size/width=674
+mouse_cursor/size/height=600
+mouse_cursor/handheld/orientation="landscape"
+mouse_cursor/size/fullscreen=false
+mouse_cursor/size/borderless=false
+mouse_cursor/size/always_on_top=false
+mouse_cursor/stretch/mode="disabled"
+
 [global]
 
 main=false
